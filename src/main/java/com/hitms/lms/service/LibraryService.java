@@ -12,6 +12,9 @@ public class LibraryService {
 
     /** All books known to the library. */
     private final List<Book> books = new ArrayList<>();
+    
+    /** Ids of registered library members. */
+    private final List<String> members = new ArrayList<>();
 
     /**
      * Adds a book to the library.
@@ -22,6 +25,25 @@ public class LibraryService {
         books.add(book);
     }
 
+    
+    /**
+     * Registers a new library member.
+     *
+     * @param memberId the id of the member to register
+     */
+    public void addMember(final String memberId) {
+        members.add(memberId);
+    }
+
+    /**
+     * Finds a registered member by id.
+     *
+     * @param memberId the id to look for
+     * @return true if the member is registered
+     */
+    public boolean findMemberById(final String memberId) {
+        return members.contains(memberId);
+    }
     /**
      * Issues a book if it exists and is available.
      *
