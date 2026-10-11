@@ -45,7 +45,7 @@ public class LibraryService {
         return members.contains(memberId);
     }
     /**
-     * Issues a book if it exists and is available.
+          * Issues a single copy; returns false if none is left.
      *
      * @param title the title to issue
      * @return true if the book was issued
