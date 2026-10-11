@@ -45,7 +45,8 @@ public class LibraryService {
         return members.contains(memberId);
     }
     /**
-        * Issues one copy of the given title from the catalogue.
+     * Issues one copy of the given title; returns false if the title is
+     * blank, unknown or no copies are left.
      *
      * @param title the title to issue
      * @return true if the book was issued
