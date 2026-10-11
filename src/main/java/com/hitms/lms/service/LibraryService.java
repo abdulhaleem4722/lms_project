@@ -51,6 +51,9 @@ public class LibraryService {
      * @return true if the book was issued
      */
     public boolean issueBook(final String title) {
+         if (title == null || title.isBlank()) {
+            return false;
+        }
         Book book = findByTitle(title);
         if (book == null || book.isIssued()) {
             return false;
